@@ -120,8 +120,10 @@
                 <div class="park-list">
                   <div class="park-list-item" :class="{'is-close': !item.open}" :key="item.id" v-for="item in PARK_LIST">
                     <el-tooltip effect="dark" :content="item.open ? item.nameCN : '敬请期待'" placement="bottom">
-                      <div class="park-list-item__icon icon--pep" :class="'icon__' + item.icon"></div>
-                      <div class="park-list-item__name">{{item.nameCN}}</div>
+                      <a>
+                        <div class="park-list-item__icon icon--pep" :class="'icon__' + item.icon"></div>
+                        <div class="park-list-item__name">{{item.nameCN}}</div>
+                      </a>
                     </el-tooltip>
                   </div>
                 </div>
@@ -132,7 +134,7 @@
         <li class="nav-item">
           <el-popover placement="bottom-end" width="200" trigger="hover">
             <div class="popover-wxapp">
-              <img src="//17disney.com/static/wxapp_17disney.jpg" alt="">
+              <img src="//17disney.com/static/wxapp_timesguide.jpg" alt="">
               <div class="popover-wxapp__title">扫码进入小程序</div>
             </div>
             <div class="insert" slot="reference" href="">

@@ -1,14 +1,25 @@
 <style lang='stylus'>
+.timesguide-list {
+  padding: 0px;
+}
 </style>
 <template>
-  <div></div>
+  <div class="timesguide-list">
+    <el-row :gutter="20">
+      <el-col :span="4" v-for="(item, index) in list" :key="index">
+        <timesguide-item @click="handleClick" :data="item"></timesguide-item>
+      </el-col>
+    </el-row>
+  </div>
 </template>
 
 <script>
+import TimesguideItem from './TimesguideItem'
 export default {
-  components: {},
+  components: { TimesguideItem },
 
-  props:{
+  props: {
+    list: Array
   },
 
   data() {
@@ -18,8 +29,12 @@ export default {
 
   computed: {},
 
-  mounted() {},
+  mounted() { },
 
-  methods: {}
+  methods: {
+    handleClick(data) {
+      this.$emit('click', data)
+    }
+  }
 }
 </script>
