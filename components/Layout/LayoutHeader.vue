@@ -14,7 +14,6 @@
 
   .container {
     height: 100%;
-    // position: relative;
   }
 
   .logo {

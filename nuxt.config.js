@@ -17,13 +17,16 @@ module.exports = {
         content: '上海迪士尼 乐园时间表 乐园指南 乐园门票收藏与交换'
       }
     ],
+    script: [
+      { src: 'https://hm.baidu.com/hm.js?1678ad2a8895998f750034b81ad97996' }
+    ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   css: ['~styles/disney/index.styl'],
   /*
   ** Customize the progress bar color
   */
-  plugins: ['~plugins/element-ui'],
+  plugins: ['~plugins/element-ui', '~plugins/gs.js'],
   loading: { color: '#3B8070' },
   /*
   ** Build configuration
