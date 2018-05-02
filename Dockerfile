@@ -7,4 +7,3 @@ RUN npm install --registry=https://registry.npm.taobao.org
 
 EXPOSE 3000
 RUN npm run build
-CMD [ "npm", "start" ]
