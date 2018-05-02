@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import DsTab from '@/components/DsTab/Dstab'
+import DsTab from '@/components/DsTab/DsTab'
 import Timesguide from '@/common/api/timesguide'
 import TimesguideList from '@/components/Timesguide/TimesguideList'
 import TimesguideFilter from '@/components/Timesguide/TimesguideFilter'
