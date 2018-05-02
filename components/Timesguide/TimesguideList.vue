@@ -1,6 +1,10 @@
 <style lang='stylus'>
 .timesguide-list {
   padding: 0px;
+
+  .timesguide-item {
+    margin-bottom: 20px;
+  }
 }
 </style>
 <template>

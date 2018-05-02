@@ -1,0 +1,89 @@
+.ds-cells {
+  .ds-cell {
+    &:last-child {
+      .ds-cell__bd {
+        border-bottom: none;
+      }
+    }
+  }
+}
+
+.ds-cell {
+  display: flex;
+  align-items: center;
+  padding-left: 16px;
+  color: $color-primary-dark;
+  font-size: 0px;
+
+  &--title {
+    background: $color-light-grey-sss;
+    color: $color-light-grey;
+    padding: 4px 16px;
+    padding-top: 25px;
+    padding-bottom: 8px;
+    font-size: 13px;
+  }
+
+  &__hd {
+    width: 65px;
+    display: flex;
+  }
+
+  .ds-label {
+    line-height: 48px;
+    font-size: 14px;
+    color: $color-primary-dark;
+  }
+
+  .ds-avatar {
+    overflow: hidden;
+    width: 48px;
+    height: 48px;
+    border-radius: 5px;
+    margin: 16px 0;
+  }
+
+  &__cd {
+    flex: 1;
+  }
+
+  &__bd {
+    padding-right: 16px;
+    border-bottom: 0.5px solid $color-light-grey-ss;
+    color: $color-light-grey;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-height: 48px;
+
+    picker {
+      flex: 1;
+    }
+
+    .ds-input {
+      flex: 1;
+    }
+  }
+
+  &__next {
+    width: 40px;
+    font-size: 12px;
+    color: $color-light-grey-ss;
+    text-align: right;
+  }
+
+  &__input {
+    padding-top: 0px;
+    padding-bottom: 0px;
+  }
+
+  .select-park {
+    padding: 8px 0;
+  }
+}
+
+.ds-input {
+  line-height: 48px;
+  height: 48px;
+  font-size: 14px;
+}

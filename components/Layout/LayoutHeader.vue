@@ -132,10 +132,7 @@
         </li>
         <li class="nav-item">
           <el-popover placement="bottom-end" width="200" trigger="hover">
-            <div class="popover-wxapp">
-              <img src="//17disney.com/static/wxapp_timesguide.jpg" alt="">
-              <div class="popover-wxapp__title">扫码进入小程序</div>
-            </div>
+            <popover-wxapp></popover-wxapp>
             <div class="insert" slot="reference" href="">
               <span class="name">小程序</span>
             </div>
@@ -149,9 +146,10 @@
 <script>
 import LogoText from './LogoText.vue'
 import PARK_LIST from '@/common/data/park-list'
+import PopoverWxapp from '@/components/Popover/PopoverWxapp'
 
 export default {
-  components: { LogoText },
+  components: { LogoText, PopoverWxapp },
 
   props: {
   },

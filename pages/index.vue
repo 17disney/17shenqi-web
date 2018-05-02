@@ -5,24 +5,6 @@
   margin-top: 20px;
 }
 
-.timesguide-detail {
-  .timesguide {
-    margin: 0 auto;
-    width: 350px;
-  }
-
-  &__user {
-    display: flex;
-    background: $color-light-grey-sss;
-    padding: 16px;
-    border-radius: 10px;
-  }
-
-  .user-avatar {
-    width: 48px;
-    height: 48px;
-  }
-}
 </style>
 
 <template>
@@ -31,23 +13,10 @@
       <div class="ds-card" style="margin-top: 50px">
         <ds-tab @click="handleClickType" :select="type" :list="TIMESGUIDE_TYPE_LIST"></ds-tab>
       </div>
-      <!-- <div class="ds-card" style="margin-top: 16px"> -->
       <timesguide-list @click="handleClickTimesguide" v-loading="loading" :list="activeList"></timesguide-list>
-      <!-- </div> -->
-
     </div>
-
-    <el-dialog :visible.sync="dialog.visible">
-      <div class="timesguide-detail">
-        <div class="timesguide">
-          <timesguide-item :data="dialog.data"></timesguide-item>
-        </div>
-        <div class="timesguide-detail__user">
-          <div class="timesguide-detail__stite">贡献者：</div>
-          <user-avatar :url="dialog.data.user.avatar"></user-avatar>
-          <div class="timesguide-detail__username">{{dialog.data.user.name}}</div>
-        </div>
-      </div>
+    <el-dialog width="960px" custom-class="dialog-timesguide" :visible.sync="dialog.visible">
+      <timesguide-detail :data="dialog.data"></timesguide-detail>
     </el-dialog>
   </div>
 </template>
@@ -56,13 +25,13 @@
 import DsTab from '@/components/DsTab/Dstab'
 import Timesguide from '@/common/api/timesguide'
 import TimesguideList from '@/components/Timesguide/TimesguideList'
-import TimesguideItem from '@/components/Timesguide/TimesguideItem'
-import UserAvatar from '@/components/User/UserAvatar'
+import TimesguideFilter from '@/components/Timesguide/TimesguideFilter'
+import TimesguideDetail from '@/components/Timesguide/TimesguideDetail'
 
 import { TIMESGUIDE_TYPE_LIST, TIMESGUIDE_TYPE } from '@/common/const'
 export default {
   components: {
-    DsTab, TimesguideList, TimesguideItem, UserAvatar
+    DsTab, TimesguideList, TimesguideFilter, TimesguideDetail
   },
   data() {
     return {

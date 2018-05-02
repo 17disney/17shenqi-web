@@ -4,8 +4,6 @@
 .timesguide-item {
   position: relative;
   width: 100%;
-  padding-bottom: 225%;
-  margin-bottom: 20px;
   background: $color-primary;
   border: 1px solid $color-light-grey-ss;
   overflow: hidden;
@@ -21,15 +19,25 @@
     height: 100%;
     position: absolute;
   }
+
+  &.is-timesguide {
+    padding-bottom: 225%;
+  }
+
+  &.is-ticket {
+    padding-bottom: 65%;
+  }
 }
 </style>
 <template>
-  <div @click="handleClick(data)" class="timesguide-item">
+  <div @click="handleClick(data)" class="timesguide-item" :class="typeClass">
     <img class="timesguide-item__pic" :src="data.picUrl" alt="">
   </div>
 </template>
 
 <script>
+
+import { TIMESGUIDE_TYPE } from '@/common/const'
 export default {
   components: {},
 
@@ -39,10 +47,20 @@ export default {
 
   data() {
     return {
+
     }
   },
 
-  computed: {},
+  computed: {
+    typeClass() {
+      const { type } = this.data
+      if (type === TIMESGUIDE_TYPE.TICKET || type === TIMESGUIDE_TYPE.VOUCHER) {
+        return 'is-ticket'
+      } else {
+        return 'is-timesguide'
+      }
+    }
+  },
 
   mounted() { },
 
