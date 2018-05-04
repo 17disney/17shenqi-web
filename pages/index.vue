@@ -12,7 +12,7 @@
       <div class="ds-card" style="margin-top: 50px">
         <ds-tab @click="handleClickType" :select="type" :list="TIMESGUIDE_TYPE_LIST"></ds-tab>
       </div>
-      <timesguide-list @click="handleClickTimesguide" v-loading="loading" :list="activeList"></timesguide-list>
+      <timesguide-list @click="handleClickTimesguide" v-loading="loading" :columns="columns" :list="activeList"></timesguide-list>
     </div>
     <el-dialog width="960px" custom-class="dialog-timesguide" :visible.sync="dialog.visible">
       <timesguide-detail :data="dialog.data"></timesguide-detail>
@@ -52,6 +52,9 @@ export default {
     activeList() {
       return this.list
       // return this.list.filter(item => item.type === this.type)
+    },
+    columns() {
+      return TIMESGUIDE_TYPE_LIST.find(_ => _.id === this.type)['columns']
     }
   },
   methods: {

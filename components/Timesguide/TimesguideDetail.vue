@@ -27,7 +27,7 @@
   &__media {
     width: 400px;
     padding: 30px 0;
-    background: $color-primary;
+    background: linear-gradient(to bottom, $color-primary-s, $color-primary);
     display: flex;
     align-items: center;
     justify-content: center;

@@ -35,13 +35,12 @@
 </style>
 <template>
   <div @click="handleClick(data)" class="timesguide-item" :class="typeClass">
-    <img class="timesguide-item__pic" :src="data.picUrl" alt="">
+    <img class="timesguide-item__pic" :src="data.picUrl" :alt="typeName">
   </div>
 </template>
 
 <script>
-
-import { TIMESGUIDE_TYPE } from '@/common/const'
+import { TIMESGUIDE_TYPE, TIMESGUIDE_TYPE_LIST } from '@/common/const'
 export default {
   components: {},
 
@@ -57,14 +56,10 @@ export default {
 
   computed: {
     typeClass() {
-      const { type } = this.data
-      if (type === TIMESGUIDE_TYPE.TICKET || type === TIMESGUIDE_TYPE.VOUCHER) {
-        return 'is-ticket'
-      } else if (type === TIMESGUIDE_TYPE.STICKER) {
-        return 'is-sticker'
-      } else {
-        return 'is-timesguide'
-      }
+      return TIMESGUIDE_TYPE_LIST.find(_ => _.id === this.data.type)['class']
+    },
+    typeName() {
+      return TIMESGUIDE_TYPE_LIST.find(_ => _.id === this.data.type)['name']
     }
   },
 

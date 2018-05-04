@@ -10,7 +10,7 @@
 <template>
   <div class="timesguide-list">
     <el-row :gutter="15">
-      <el-col :span="3" v-for="(item, index) in list" :key="index">
+      <el-col :span="col" v-for="(item, index) in list" :key="index">
         <timesguide-item @click="handleClick" :data="item"></timesguide-item>
       </el-col>
     </el-row>
@@ -23,7 +23,8 @@ export default {
   components: { TimesguideItem },
 
   props: {
-    list: Array
+    list: Array,
+    columns: Number
   },
 
   data() {
@@ -31,7 +32,11 @@ export default {
     }
   },
 
-  computed: {},
+  computed: {
+    col() {
+      return 24 / this.columns
+    }
+  },
 
   mounted() { },
 
