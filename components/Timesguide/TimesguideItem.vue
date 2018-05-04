@@ -27,6 +27,10 @@
   &.is-ticket {
     padding-bottom: 65%;
   }
+
+  &.is-sticker {
+    padding-bottom: 100%;
+  }
 }
 </style>
 <template>
@@ -56,6 +60,8 @@ export default {
       const { type } = this.data
       if (type === TIMESGUIDE_TYPE.TICKET || type === TIMESGUIDE_TYPE.VOUCHER) {
         return 'is-ticket'
+      } else if (type === TIMESGUIDE_TYPE.STICKER) {
+        return 'is-sticker'
       } else {
         return 'is-timesguide'
       }

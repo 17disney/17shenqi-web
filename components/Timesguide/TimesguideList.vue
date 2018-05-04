@@ -3,14 +3,14 @@
   padding: 0px;
 
   .timesguide-item {
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 }
 </style>
 <template>
   <div class="timesguide-list">
-    <el-row :gutter="20">
-      <el-col :span="4" v-for="(item, index) in list" :key="index">
+    <el-row :gutter="15">
+      <el-col :span="3" v-for="(item, index) in list" :key="index">
         <timesguide-item @click="handleClick" :data="item"></timesguide-item>
       </el-col>
     </el-row>

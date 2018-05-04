@@ -2,11 +2,11 @@ import request from '~/utils/request'
 const base = 'https://api.17disney.com/timesguide-service'
 
 export default {
-  explorerList: function list(local) {
+  explorerList: function list(data) {
     return request({
-      url: `${base}/v1/timesguides`,
+      url: `${base}/v2/timesguides`,
       method: 'get',
-      params: { local }
+      params: data
     })
   },
 

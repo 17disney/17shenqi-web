@@ -48,7 +48,8 @@ const TIMESGUIDE_TYPE = {
   TOWNGUIDE: 3,
   OTHERGUIDE: 4,
   TICKET: 5,
-  VOUCHER: 6
+  VOUCHER: 6,
+  STICKER: 7
 }
 
 const TIMESGUIDE_TYPE_LIST = [
@@ -82,7 +83,12 @@ const TIMESGUIDE_TYPE_LIST = [
   {
     id: TIMESGUIDE_TYPE.VOUCHER,
     name: '乐园兑换券',
-    icon: 'icon__tickets'
+    icon: 'icon__wdw-tickets-and-passes'
+  },
+  {
+    id: TIMESGUIDE_TYPE.STICKER,
+    name: '乐园贴纸',
+    icon: 'icon__show-contains-bubble'
   }
 ]
 

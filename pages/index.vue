@@ -4,7 +4,6 @@
 .timesguide-list {
   margin-top: 20px;
 }
-
 </style>
 
 <template>
@@ -51,12 +50,14 @@ export default {
   },
   computed: {
     activeList() {
-      return this.list.filter(item => item.type === this.type)
+      return this.list
+      // return this.list.filter(item => item.type === this.type)
     }
   },
   methods: {
     async init() {
-      let list = await Timesguide.explorerList('shanghai')
+      const { local, type } = this
+      let list = await Timesguide.explorerList({ local, type })
       this.list = list
       this.loading = false
     },
@@ -70,6 +71,7 @@ export default {
     handleClickType(type) {
       this.loading = true
       this.type = type
+      this.init()
 
       setTimeout(() => {
         this.loading = false
