@@ -28,6 +28,12 @@
     border-radius: 5px;
     padding: 16px;
     margin: 0 30px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    transition: 0.15s;
+
+    &:hover {
+      border-color: $color-primary;
+    }
 
     &__img {
       width: 100px;
