@@ -63,7 +63,9 @@ const TIMESGUIDE_TYPE_LIST = [
   {
     id: TIMESGUIDE_TYPE.GUIDEMAP,
     name: '乐园指南',
-    icon: 'icon__disney-resort'
+    icon: 'icon__disney-resort',
+    class: 'is-timesguide',
+    columns: 8
   },
 
   {
@@ -99,7 +101,6 @@ const TIMESGUIDE_TYPE_LIST = [
     id: TIMESGUIDE_TYPE.STICKER,
     name: '乐园贴纸',
     icon: 'icon__show-contains-bubble',
-
     class: 'is-sticker',
     columns: 6
   }

@@ -1,8 +1,10 @@
 <style lang="stylus">
 @require '../../styles/disney/var/color.styl';
 
+$header-height = 80px;
+
 .header {
-  height: 80px;
+  height: $header-height;
   color: #fff;
   top: 0;
   left: 0;
@@ -11,6 +13,15 @@
   position: relative;
   position: absolute;
   z-index: 200;
+
+  .logo-text {
+    margin-top: 15px;
+    height: 50px;
+
+    path {
+      fill: #FFF;
+    }
+  }
 
   .container {
     height: 100%;
@@ -21,6 +32,7 @@
     float: left;
     font-size: 32px;
     font-weight: 400;
+    cursor: pointer;
   }
 
   .nav {
@@ -33,10 +45,14 @@
   }
 
   .nav-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin: 0;
     float: left;
     list-style: none;
     cursor: pointer;
+    height: $header-height;
 
     .insert {
       font-size: 17px;
@@ -46,13 +62,14 @@
       padding: 0 22px;
       opacity: 0.8;
       transition: 0.15s;
+      line-height: 30px;
 
       &:hover {
         opacity: 1;
       }
 
       .name {
-        line-height: 80px;
+        // line-height: 80px;
       }
     }
   }
@@ -90,6 +107,7 @@
 
     &__icon {
       font-size: 50px;
+      margin-bottom: 8px;
     }
 
     &__name {
@@ -107,7 +125,9 @@
   <div class="header">
     <div class="container">
       <h1 class="logo">
-        <logo-text></logo-text>
+        <el-tooltip effect="dark" content="祝你拥有奇妙的一天" placement="bottom">
+          <logo-text></logo-text>
+        </el-tooltip>
       </h1>
       <ul class="nav">
         <li @mouseenter="enter" @mouseleave="leave" class="nav-item">

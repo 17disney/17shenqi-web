@@ -1,5 +1,6 @@
 <style lang='stylus'>
 .timesguide-list {
+  min-height: 300px;
   padding: 0px;
 
   .timesguide-item {
@@ -24,7 +25,10 @@ export default {
 
   props: {
     list: Array,
-    columns: Number
+    columns: {
+      type: Number,
+      default: 8
+    }
   },
 
   data() {

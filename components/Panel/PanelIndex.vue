@@ -38,7 +38,7 @@
 <template>
   <div class="panel-index">
     <div class="panel-index__list">
-      <div class="panel-index__item" v-for="item in data" :key="item">
+      <div class="panel-index__item" v-for="(item, index) in data" :key="index">
         <div class="panel-index__num">{{item.num}}</div>
         <div class="panel-index__desc">{{item.name}}</div>
       </div>
